@@ -52,27 +52,27 @@ class GC {
     
 
 
-    static disableOtherHotkey(thisHotkey)
-    {
-        global allHotkeys
-        for index, value in allHotkeys
-        {
-            if (value != thisHotkey) {
-                hotkey value, "off"
-            }
-        }
-    }
+    ; static disableOtherHotkey(thisHotkey)
+    ; {
+    ;     global allHotkeys
+    ;     for index, value in allHotkeys
+    ;     {
+    ;         if (value != thisHotkey) {
+    ;             hotkey value, "off"
+    ;         }
+    ;     }
+    ; }
 
-    static enableOtherHotkey(thisHotkey)
-    {
-        global allHotkeys
-        for index, value in allHotkeys
-        {
-            if (value != thisHotkey) {
-                hotkey value, "on"
-            }
-        }
-    }
+    ; static enableOtherHotkey(thisHotkey)
+    ; {
+    ;     global allHotkeys
+    ;     for index, value in allHotkeys
+    ;     {
+    ;         if (value != thisHotkey) {
+    ;             hotkey value, "on"
+    ;         }
+    ;     }
+    ; }
 
     static disableAllHotkey()
     {

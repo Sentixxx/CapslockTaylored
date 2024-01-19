@@ -57,7 +57,7 @@ global EnableSemicolonComfort := false
 {
     global semicolonHook, EnableSemicolonComfort
     thisHotkey := A_ThisHotkey
-    GC.disableOtherHotkey(thisHotkey)
+    ;GC.disableOtherHotkey(thisHotkey)
     EnableSemicolonComfort := true
     KeyWait ";"
     EnableSemicolonComfort := false
@@ -65,7 +65,7 @@ global EnableSemicolonComfort := false
     {
         Send ";" 
     }
-    GC.enableOtherHotkey(thisHotkey)
+    ;GC.enableOtherHotkey(thisHotkey)
 }
 
 ; ; 删除缓存拼写时，也不会更新

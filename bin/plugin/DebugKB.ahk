@@ -44,19 +44,19 @@ global EnableDebugKeyboard := false
 ; - 退出：
 ;   - 明示：<Esc>
 ;   - 静默：AIOS 增删改代码时，打开计算器时默默退出
-*4::
-{
-    global EnableDebugKeyboard
-    thisHotkey := A_ThisHotkey
-    GC.disableOtherHotkey(thisHotkey)
-    EnableDebugKeyboard := true
-    ToolTip "🦉"
-    keywait "4"
-    EnableDebugKeyboard := false
-    if (A_PriorKey == "4" && A_TimeSinceThisHotkey < 350)
-    {
-        Send "{blind}4"
-    }
-    GC.enableOtherHotkey(thisHotkey)
-    ToolTip
-}
+; *4::
+; {
+;     global EnableDebugKeyboard
+;     thisHotkey := A_ThisHotkey
+;     GC.disableOtherHotkey(thisHotkey)
+;     EnableDebugKeyboard := true
+;     ToolTip "🦉"
+;     keywait "4"
+;     EnableDebugKeyboard := false
+;     if (A_PriorKey == "4" && A_TimeSinceThisHotkey < 350)
+;     {
+;         Send "{blind}4"
+;     }
+;     GC.enableOtherHotkey(thisHotkey)
+;     ToolTip
+; }
