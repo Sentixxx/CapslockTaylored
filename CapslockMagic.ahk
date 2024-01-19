@@ -1,4 +1,5 @@
-﻿;=====================================================================o
+﻿#Warn
+;=====================================================================o
 ;
 ;
 ;  ▄████▄   ▄▄▄       ██▓███    ██████  ██▓     ▒█████   ▄████▄   ██ ▄█▀
@@ -56,12 +57,12 @@ global kMouseMoveSpeedSlow := 11
 ; - SHOU_XIN        手心输入法
 ; - QQ_PIN_YIN      QQ拼音
 ; - OTHER           其他（需要你调试）
-global kImeType := PinYinEnum.WETYPE
+;global kImeType := PinYinEnum.WETYPE
 
 ;=====================================================================o
 ;                       CapsLock init
 ; 托盘图标
-TrayIcon.init()
+; TrayIcon.init()
 
 ; 热键钩子注册中心
 allHotkeys := []
@@ -70,7 +71,7 @@ allHotkeys.Push("*3")
 allHotkeys.Push("*4")
 
 ; 用户数据 ============================
-#Include data\UserDictionary.ahk
+; #Include data\UserDictionary.ahk
 #Include data\Application.ahk
 #Include data\Website.ahk
 ; 公共组件 ============================
@@ -79,13 +80,13 @@ allHotkeys.Push("*4")
 #Include bin\util\Timer.ahk
 #Include bin\util\Dotfiles.ahk
 #Include bin\util\Locator.ahk
-#Include bin\util\Vim.ahk
-#Include bin\util\UI.ahk
+; #Include bin\util\Vim.ahk
+; #Include bin\util\UI.ahk
 #Include bin\util\SoundVolume.ahk
 ; 增强插件 ============================
 #Include bin\CapsLockEnhancement.ahk
 #Include bin\Numpad.ahk
-#Include bin\Mouse.ahk
+; #Include bin\Mouse.ahk
 #Include bin\Navigator.ahk
 #Include bin\SemicolonHook.ahk
 #Include bin\Window.ahk
@@ -93,9 +94,9 @@ allHotkeys.Push("*4")
 ; 拓展键盘 ============================
 #Include bin\plugin\DebugKB.ahk
 #Include bin\plugin\GarbageKB.ahk
-#Include bin\plugin\NotionKB.ahk
-#Include bin\plugin\IDEKB.ahk
-#Include bin\plugin\FigmaKB.ahk
+; #Include bin\plugin\NotionKB.ahk
+; #Include bin\plugin\IDEKB.ahk
+; #Include bin\plugin\FigmaKB.ahk
 
 ; 全局配置结束 ===========
 

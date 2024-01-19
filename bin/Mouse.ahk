@@ -12,63 +12,63 @@ CoordMode "Caret"
 ;   Left           ←                                    减速
 ;   Right          →                                    减速
 
-CapsLock & Up::
-{
-    MouseMove 0, -10, 0, "R"
-}
+; CapsLock & Up::
+; {
+;     MouseMove 0, -10, 0, "R"
+; }
 
-CapsLock & Down::
-{
-    MouseMove 0, 10, 0, "R"
-}
+; CapsLock & Down::
+; {
+;     MouseMove 0, 10, 0, "R"
+; }
 
-CapsLock & Left::
-{
-    MouseMove -10, 0, 0, "R"
-}
+; CapsLock & Left::
+; {
+;     MouseMove -10, 0, 0, "R"
+; }
 
-CapsLock & Right::
-{
-    MouseMove 10, 0, 0, "R"
-}
+; CapsLock & Right::
+; {
+;     MouseMove 10, 0, 0, "R"
+; }
 
-CapsLock & Enter::
-{
-    if GetKeyState("Alt") = 1
-    {
-        SendEvent "{RButton}"
-    }
-    else if GetKeyState("LWin") = 1
-    {
-        sendEvent "^{Left}^+{Right}"
-        Send "^c"
-    }
-    else if GetKeyState("Ctrl") = 1
-    {
-        SendEvent "{End}+{Home}"
-    } else {
-        ; 模拟鼠标点击
-        SendEvent "{Blind}{LButton down}"
-        KeyWait "Enter"
-        SendEvent "{Blind}{LButton up}"
-        IME.setIdeDefault("EN")
-    }
+; CapsLock & Enter::
+; {
+;     if GetKeyState("Alt") = 1
+;     {
+;         SendEvent "{RButton}"
+;     }
+;     else if GetKeyState("LWin") = 1
+;     {
+;         sendEvent "^{Left}^+{Right}"
+;         Send "^c"
+;     }
+;     else if GetKeyState("Ctrl") = 1
+;     {
+;         SendEvent "{End}+{Home}"
+;     } else {
+;         ; 模拟鼠标点击
+;         SendEvent "{Blind}{LButton down}"
+;         KeyWait "Enter"
+;         SendEvent "{Blind}{LButton up}"
+;         ;IME.setIdeDefault("EN")
+;     }
 
-}
+; }
 
 ; 物理鼠标点击
-~LButton::
-{
-    IME.setIdeDefault("EN")
-    ; MouseShadowAvatar.signPhysical()
-}
+; ~LButton::
+; {
+;     IME.setIdeDefault("EN")
+;     ; MouseShadowAvatar.signPhysical()
+; }
 
-~LButton up::
-{
-    ; 清空输入法显示状态了
-    ; Sleep 500
-    ; ToolTip
-}
+; ~LButton up::
+; {
+;     ; 清空输入法显示状态了
+;     ; Sleep 500
+;     ; ToolTip
+; }
 
 
 ; 鼠标禅模式(BlockInput)

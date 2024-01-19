@@ -151,17 +151,17 @@ class WinOS {
     }
 
     ; [已废弃] 同类窗口的切换: 实测按9下才回到这个窗口
-    static shift() {
-      winClass := WinGetClass("A")
-      if (winClass == "ApplicationFrameWindow") {
-        title := WinGetTitle("A")
-        to_check := title " ahk_class ApplicationFrameWindow"
-      } else
-        to_check := "ahk_exe " GetProcessName()
+    ; static shift() {
+    ;   winClass := WinGetClass("A")
+    ;   if (winClass == "ApplicationFrameWindow") {
+    ;     title := WinGetTitle("A")
+    ;     to_check := title " ahk_class ApplicationFrameWindow"
+    ;   } else
+    ;     to_check := "ahk_exe " GetProcessName()
 
-      MyGroupActivate(to_check)
-      return
-    }
+    ;   MyGroupActivate(to_check)
+    ;   return
+    ; }
   }
 
 }

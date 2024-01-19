@@ -58,14 +58,14 @@ class Idea extends App.Idea {
         Send "+{Enter}"
     }
 
-    static focusPasteElementByIdeavim() {
-        Send "{Blind}^c"
-        Send "{Blind}^v"
-        ; Send "{Blind}!{Tab}"
-        ActivateOrRun("ahk_exe idea64.exe")
-        Sleep 100
-        Vim.searchByPaste()
-    }
+    ; static focusPasteElementByIdeavim() {
+    ;     Send "{Blind}^c"
+    ;     Send "{Blind}^v"
+    ;     ; Send "{Blind}!{Tab}"
+    ;     ActivateOrRun("ahk_exe idea64.exe")
+    ;     Sleep 100
+    ;     Vim.searchByPaste()
+    ; }
 
     static clearAll() {
         IDE.service()

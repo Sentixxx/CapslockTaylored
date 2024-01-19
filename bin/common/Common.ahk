@@ -72,6 +72,7 @@ ActivateOrRun(to_activate := "", target := "", args := "", workingdir := "", Run
     Requires AutoHotkey v2.0-a136-feda41f4
     https://www.autohotkey.com/boards/viewtopic.php?t=78190
 */
+
 ShellRunApp(prms*)
 {
     shellWindows := ComObject("Shell.Application").Windows
@@ -93,10 +94,10 @@ ShellRunApp(prms*)
             ComCall(15, psv, "uint", 0, "ptr", IID_IDispatch, "ptr*", &pdisp := 0)
 
             ; Get Shell object.
-            shell := ComObjFromPtr(pdisp).Application
+            localShell := ComObjFromPtr(pdisp).Application
 
             ; IShellDispatch2.ShellExecute
-            shell.ShellExecute(prms*)
+            localShell.ShellExecute(prms*)
 
             ObjRelease(psv)
         }

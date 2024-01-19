@@ -30,12 +30,12 @@ class IDE {
     }
 
     ; 输入法管家
-    static esc() {
-        ; 如果先返回，图片消失了，就检测不到了，所以最后返回
-        Send "{Esc}"
-        ; 异步调用，提升速度
-        SetTimer () => IME.set("EN"), -200
-    }
+    ; static esc() {
+    ;     ; 如果先返回，图片消失了，就检测不到了，所以最后返回
+    ;     Send "{Esc}"
+    ;     ; 异步调用，提升速度
+    ;     SetTimer () => IME.set("EN"), -200
+    ; }
 
     ; 在哪关联使用
     static usage() {

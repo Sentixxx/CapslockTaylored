@@ -2,46 +2,39 @@
 ;                      Application
 
 ; a = appearence | window | shot
-CapsLock & a::
-{
-    ; 魔鬼逻辑：当前{}大括号内，caps+a永远为按下，方法内无法修改此前提
-    ; 跳出问题，大括号之外释放热键
-    if GetKeyState("LAlt", "p") {
-        Window.move()
-    }
-    else if GetKeyState("LWin", "p") {
-        Mouse.move()
-    }
-    else if GetKeyState("LCtrl", "p") {
-        Window.zoom()
-    }
-    else {
-        return
-    }
-    GC.ModifyKey()
-}
+; CapsLock & a::
+; {
+;     ; 魔鬼逻辑：当前{}大括号内，caps+a永远为按下，方法内无法修改此前提
+;     ; 跳出问题，大括号之外释放热键
+;     if GetKeyState("LAlt", "p") {
+;         Window.move()
+;     }
+;     else if GetKeyState("LWin", "p") {
+;         Mouse.move()
+;     }
+;     else if GetKeyState("LCtrl", "p") {
+;         Window.zoom()
+;     }
+;     else {
+;         return
+;     }
+;     GC.ModifyKey()
+; }
 
 
 ; d = database | api docs
-CapsLock & d::
-{
-    if GetKeyState("Ctrl") {
-        App.apifox.run()
-    } else {
-        App.navicat.run()
-    }
-}
+;
 
 ; f = find | search cabinet
-CapsLock & f::
-{
-    if GetKeyState("Ctrl") {
-        WinOS.Manager.explorer()
-    } else {
-        App.everything()
-    }
-    IME.set("EN")
-}
+; CapsLock & f::
+; {
+;     if GetKeyState("Ctrl") {
+;         ;WinOS.Manager.explorer()
+;     } else {
+;         App.everything()
+;     }
+;     ;IME.set("EN")
+; }
 
 ; g = google
 CapsLock & g::
@@ -56,7 +49,17 @@ CapsLock & g::
 ; e = editor
 CapsLock & e::
 {
-    App.notion()
+    if GetKeyState("Ctrl")
+        {
+            App.Mail.run()
+        }
+        else if GetKeyState("Alt")
+        {
+            activateOrRun("ahk_class CabinetWClass", "explorer",,,true)
+            ;WinOS.Folder.personal()
+        } else {
+            App.Chrome.run()
+        }
 }
 
 ; r = run | develop | java | back-end
@@ -64,13 +67,13 @@ CapsLock & r::
 {
     if GetKeyState("Ctrl")
     {
-        App.Uniapp.activate()
+        App.Terminal.activate()
     }
     else if GetKeyState("Alt")
     {
-        App.Todesk.run()
+        ;App.Todesk.run()
     } else {
-        App.Idea.activate()
+        App.Terminal.activate()
     }
 }
 
@@ -78,9 +81,9 @@ CapsLock & r::
 CapsLock & t::
 {
     if GetKeyState("Ctrl") {
-        App.WxDevTools.activate()
+        ;App.WxDevTools.activate()
     } else if getKeyState("Alt") {
-        App.Tabby.run()
+        App.Typora.run()
     } else {
         App.Vscode.run()
     }

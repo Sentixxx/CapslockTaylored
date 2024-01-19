@@ -28,23 +28,23 @@ class Notion {
         Send "^!m"
     }
 
-    static pasteCodeAs(language)
-    {
-        ToolTip "⇤ " INDENT_LEVEL
-        Notion.pasteCode()
-        Sleep 200
-        Send "{blind!#}^/"
-        Sleep 300
-        Send language
-        Sleep 700
-        if (IME.exists() = 1) {
-            ; 输入法中文状态时
-            Send "{Enter}"
-            Sleep 50
-        }
-        Send "{Enter}"
-        SetTimer () => Tooltip(), -1000
-    }
+    ; static pasteCodeAs(language)
+    ; {
+    ;     ToolTip "⇤ " INDENT_LEVEL
+    ;     Notion.pasteCode()
+    ;     Sleep 200
+    ;     Send "{blind!#}^/"
+    ;     Sleep 300
+    ;     Send language
+    ;     Sleep 700
+    ;     if (IME.exists() = 1) {
+    ;         ; 输入法中文状态时
+    ;         Send "{Enter}"
+    ;         Sleep 50
+    ;     }
+    ;     Send "{Enter}"
+    ;     SetTimer () => Tooltip(), -1000
+    ; }
 
     static pasteRelativePathByLastIDE()
     {
