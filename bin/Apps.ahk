@@ -122,7 +122,8 @@ CapsLock & v::
 ; x = ? dict
 CapsLock & z::
 {
-    App.eaudic()
+    send "^!n"
+    ;App.eaudic()
 }
 
 ; 配合鼠标使用，因为删除键较远

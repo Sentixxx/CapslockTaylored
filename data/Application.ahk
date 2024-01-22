@@ -235,9 +235,9 @@ class App {
     ;     Send "{blind}!+f"
     ; }
 
-    ; static ditto() {
-    ;     Send "{blind}^+!b"
-    ; }
+    static ditto() {
+        Send "{blind}+!v"
+    }
 
     ; static dittoPaste(index) {
     ;     App.ditto()
