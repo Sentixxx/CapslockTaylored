@@ -172,4 +172,4 @@ CapsLock & w:: {
 CapsLock & /::AppsKey
 
 ; 激活powertoys窗口
-CapsLock & Space:: Send "!+^#{Space}"
+CapsLock & Space:: Send "!{Space}"

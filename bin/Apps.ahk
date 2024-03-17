@@ -67,13 +67,13 @@ CapsLock & r::
 {
     if GetKeyState("Ctrl")
     {
-        App.Terminal.activate()
+        ; App.Terminal.activate()
     }
     else if GetKeyState("Alt")
     {
         ;App.Todesk.run()
     } else {
-        App.Terminal.activate()
+        App.Terminal.run()
     }
 }
 

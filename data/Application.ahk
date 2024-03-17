@@ -58,8 +58,8 @@ class App {
 
     class Terminal extends Software {
         static __New() {
-            this.title := "ahk_exe WindowsTerminal.exe"
-            this.path := "tools\Windows Terminal.lnk"
+            this.title := "ahk_class org.wezfurlong.wezterm ahk_exe wezterm-gui.exe"
+            this.path := A_Programs "\WezTerm.lnk"
         }
         static refresh() {
             this.activate()
