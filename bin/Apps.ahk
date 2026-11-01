@@ -78,16 +78,17 @@ CapsLock & r::
 }
 
 ; t = terminal | develop | front-end
-CapsLock & t::
-{
-    if GetKeyState("Ctrl") {
-        ;App.WxDevTools.activate()
-    } else if getKeyState("Alt") {
-        App.Typora.run()
-    } else {
-        App.Vscode.run()
-    }
-}
+; 本机未安装 VSCode / Typora，已停用（需要时取消注释）
+; CapsLock & t::
+; {
+;     if GetKeyState("Ctrl") {
+;         ;App.WxDevTools.activate()
+;     } else if getKeyState("Alt") {
+;         App.Typora.run()
+;     } else {
+;         App.Vscode.run()
+;     }
+; }
 
 
 
@@ -120,11 +121,12 @@ CapsLock & v::
 }
 
 ; x = ? dict
-CapsLock & z::
-{
-    send "^!n"
-    ;App.eaudic()
-}
+; 本机没有 eudic 词典，已停用
+; CapsLock & z::
+; {
+;     send "^!n"
+;     ;App.eaudic()
+; }
 
 ; 配合鼠标使用，因为删除键较远
 CapsLock & x:: Send "{Blind}{Backspace}"

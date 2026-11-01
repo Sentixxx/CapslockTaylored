@@ -73,3 +73,15 @@ allHotkeys.Push("*4")
 #SuspendExempt
 
 CapsLock & y:: Reload
+
+; d = disable | 游戏模式：暂停/恢复全部重映射
+; 必须放在 #SuspendExempt 之后，否则暂停后就无法用热键唤醒
+CapsLock & d:: {
+    Suspend -1
+    ; 切换瞬间 CapsLock 抬起事件可能被系统当成原生按键，强制清一次大写状态
+    SetCapsLockState "AlwaysOff"
+    if A_IsSuspended
+        TrayTip("已暂停 · 游戏模式（CapsLock 恢复为普通大写锁定）", "CapslockMagic", 1)
+    else
+        TrayTip("已恢复 · CapsLock 重新变为 Hyper 键", "CapslockMagic", 1)
+}

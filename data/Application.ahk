@@ -58,8 +58,8 @@ class App {
 
     class Terminal extends Software {
         static __New() {
-            this.title := "ahk_class org.wezfurlong.wezterm ahk_exe wezterm-gui.exe"
-            this.path := A_Programs "\WezTerm.lnk"
+            this.title := "ahk_exe WindowsTerminal.exe"
+            this.path := "wt.exe"
         }
         static refresh() {
             this.activate()
@@ -236,7 +236,8 @@ class App {
     ; }
 
     static ditto() {
-        Send "{blind}+!v"
+        ; Ditto 默认粘贴热键是 Ctrl+`（不是 Ctrl+Shift+V）
+        Send "{blind}^{U+0060}"
     }
 
     ; static dittoPaste(index) {
